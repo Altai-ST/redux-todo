@@ -1,5 +1,5 @@
-  import React from 'react';
-  import './Todo.css'
+import React from 'react';
+import './Todo.css'
 const Todo = ({ onClick, completed, text, id }) => {
   return(
       <li

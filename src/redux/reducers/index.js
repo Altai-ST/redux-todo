@@ -8,6 +8,7 @@ const initialState ={
 export const todoApp =(state = initialState, action)=>{
     switch (action.type){
         case ADD_TODO:
+            if(action.text !== ''){
             return Object.assign({}, state, {
                 todos: [
                     ...state.todos,
@@ -18,7 +19,9 @@ export const todoApp =(state = initialState, action)=>{
                     }
                 ]
             })
-
+        }else{
+            return state
+        }
         case SET_VISIBILITY_FILTER:
             return Object.assign({}, state,{
                 visibilityFilter: action.filter
